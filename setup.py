@@ -1,9 +1,9 @@
 import setuptools
 import sys
 
-*_, version, url = sys.argv
+_, version, url, *_ = sys.argv
+print(version, url)
 with open("README.md") as fl: ldesc = fl.read()
-
 setuptools.setup(
     name="pychunkbuffers",
     version=version,
