@@ -6,7 +6,7 @@ setuptools.setup(
     version="1.0.0",
     author="AdityaIyer2k7",
     author_email="adityaiyer2007@gmail.com",
-    description="An open-source python library for writing large amounts of data to buffers via chunks.",
+    description="An open-source python library for writing large amounts of data to buffers via chunks",
     long_description=ldesc,
     long_description_content_type="Markdown",
     url="https://github.com/AdityaIyer2k7/pychunkbuffers",
