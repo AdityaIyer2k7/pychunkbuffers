@@ -29,3 +29,18 @@ Now, we would like to check when all chunks have completed their tasks. The libr
 ```py
 while not all(STATUS): pass
 ```
+
+Example implementation:
+
+```py
+# Task: To write the squares values for numbers 1 to 10**8 (inclusive)
+squares = [0]*10**8
+CHUNKSIZE = 10**5
+def func(startidx, endidx):
+  for i in range(startidx, endidx):
+    squares[i] = (i+1)**2
+status = run_chunked(func, CHUNKSIZE, 0, len(squares))
+while not all(status): pass
+print("Done")
+print(squares[:100])
+```
