@@ -4,7 +4,7 @@ import threading
 import math
 
 class ChunkedFunction:
-    def __init__(self, func:Callable, idx:int, chunksz:int, minidx:int, maxidx:int, daemon:bool=False, args:Iterable[Any]=None, kwargs:Mapping[str,Any]=None, statuslist:Iterable[bool]=None):
+    def __init__(self, func:Callable, idx:int, chunksz:int, minidx:int, maxidx:int, args:Iterable[Any]=None, kwargs:Mapping[str,Any]=None, daemon:bool=False, statuslist:Iterable[bool]=None):
         self.func = func
         self.idx = idx
         self.startidx = minidx+idx*chunksz
@@ -22,7 +22,7 @@ class ChunkedFunction:
     def start(self):
         self.thread.start()
 
-def run_chunked(func:Callable, chunksz:int, minidx:int, maxidx:int, daemon:bool=False, args:Iterable[Any]=None, kwargs:Mapping[str,Any]=None) -> List[bool]:
+def run_chunked(func:Callable, chunksz:int, minidx:int, maxidx:int, args:Iterable[Any]=None, kwargs:Mapping[str,Any]=None, daemon:bool=False) -> List[bool]:
     """
     Params:
      - func    : Function or callable, must take keyword arguments `startidx` and `endidx`
@@ -53,7 +53,7 @@ def run(func:Callable, *args, **kwargs) -> List[bool]:
 run.__doc__ = run_chunked.__doc__
 
 if __name__ == "__main__":
-    l1 = [0]*100000000
+    l1 = [0]*10000000
     def a(startidx=0, endidx=10):
         for i in range(startidx, endidx):
             l1[i]=i
