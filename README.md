@@ -2,7 +2,7 @@
 An open-source python library for writing large amounts of data to buffers via chunks.
 
 ## Description
-This repositiory contains the source code for the `pychunkbuffers` library. I came up with the idea for this library while making my other project https://github.com/AdityaIyer2k7/image-file-hider. In that project, I often had to write large amounts of data (hundreds of megabytes) to lists and buffers. Doing this byte-by-byte took a lot of time, so instead I came up with the solution of chunking.
+This repositiory contains the source code for the `pychunkbuffers` library. I came up with the idea for this library while making my other project [AdityaIyer2k7/image-file-hider](https://github.com/AdityaIyer2k7/image-file-hider). In that project, I often had to write large amounts of data (hundreds of megabytes) to lists and buffers. Doing this byte-by-byte took a lot of time, so instead I came up with the solution of chunking.
 
 Basically, let us say we have a `for` loop that has to run 10^8 times, and each time it adds a value to a list. In a chunked implementation, you would pre-define this list like this:
 ```py
