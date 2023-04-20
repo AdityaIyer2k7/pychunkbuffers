@@ -53,10 +53,12 @@ def run(func:Callable, *args, **kwargs) -> List[bool]:
 run.__doc__ = run_chunked.__doc__
 
 if __name__ == "__main__":
-    l1 = [0]*10000000
-    def a(startidx=0, endidx=10):
+    # Task: To write the squares values for numbers 1 to 10**8 (inclusive)
+    squares = [0]*10**8
+    CHUNKSIZE = 10**5
+    def func(startidx, endidx):
         for i in range(startidx, endidx):
-            l1[i]=i
-    b = run(a, 1000, 0, len(l1))
-    while not all(b): pass
+            squares[i] = (i+1)**2
+    status = run_chunked(func, CHUNKSIZE, 0, len(squares))
+    while not all(status): pass
     print("Done")
