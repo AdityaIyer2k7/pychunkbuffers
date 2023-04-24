@@ -3,7 +3,7 @@ import setuptools
 with open("README.md") as fl: ldesc = fl.read()
 setuptools.setup(
     name="pychunkbuffers",
-    version="1.0.0",
+    version="1.0.3",
     author="AdityaIyer2k7",
     author_email="adityaiyer2007@gmail.com",
     description="An open-source python library for writing large amounts of data to buffers via chunks",
