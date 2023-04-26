@@ -41,7 +41,7 @@ def run_chunked(func:Callable, chunksz:int, minidx:int, maxidx:int, args:Iterabl
     assert type(chunksz)==int
     assert type(minidx)==int
     assert type(maxidx)==int
-    n = minidx+math.ceil((maxidx-minidx)/chunksz)
+    n = math.ceil((maxidx-minidx)/chunksz)
     statuslist = [False]*n
     for i in range(n):
         ChunkedFunction(func, i, chunksz, minidx, maxidx, args, kwargs, daemon, statuslist).start()
